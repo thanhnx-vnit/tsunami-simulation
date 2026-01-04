@@ -1,0 +1,19 @@
+html,
+body,
+#page-wrapper,
+#cesium-container {
+    margin: 0;
+    padding: 0;
+}
+
+#page-wrapper {
+    position: relative;
+}
+
+#cesium-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}

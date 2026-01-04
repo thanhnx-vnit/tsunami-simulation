@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesium + Three.js WebGL Water Demo</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="./libs/Cesium/Cesium.js"></script>
+    <link href="./libs/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script type="importmap">
+		{
+			"imports": {
+                "three": "./libs/three/build/three.module.js",
+				"three/webgpu": "./libs/three/build/three.webgpu.js",
+				"three/tsl": "./libs/three/build/three.tsl.js",
+				"three/addons/": "./libs/three/examples/jsm/"
+			}
+		}
+	</script>
+
+    <!-- This is a 'compute shader' to read the current level and normal of water at a point -->
+    <!-- It is used with a variable of size 1x1 -->
+    <script id="readWaterLevelFragmentShader" type="x-shader/x-fragment" src="./water-level-fragment-shader.frag"></script>
+
+    <div id="page-wrapper">
+        <div id="cesium-container"></div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
